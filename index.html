@@ -15,6 +15,12 @@
             background-color: #f0f0f0;
             padding: 20px;
         }
+        #sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: black;
+        }
         #content {
             flex-grow: 1;
             padding: 20px;
@@ -41,7 +47,14 @@
     <div id="content">
         <h1>Welcome to my profile!</h1>
         <p>Hello there! I'm Sarat Addepalli, a software engineer from Bengaluru.</p>
-        <embed id="pdfViewer" src="SaratAddepalli.pdf" type="application/pdf">
+        <embed id="pdfViewer" type="application/pdf">
     </div>
+    <script>
+        document.getElementById('previewLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('pdfViewer').src = 'SaratAddepalli.pdf';
+            document.getElementById('pdfViewer').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
